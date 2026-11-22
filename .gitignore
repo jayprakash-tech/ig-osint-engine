@@ -1,0 +1,41 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Local environment and credentials
+.env
+.env.*
+cookies.json
+session.json
+*.cookie
+
+# Generated data and reports
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+
+# Downloaded media
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.mp4
+*.mov
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Operating-system files
+.DS_Store
+Thumbs.db
