@@ -16,27 +16,29 @@ git clone https://github.com/jayprakash-tech/ig-osint-engine.git
 cd ig-osint-engine
 pip install -r requirements.txt
 ```
-## Harvest data
+## Usage
+
+### Harvest data
 
 ```bash
 python main.py harvest --username target_user --posts 100 --followers 200
 ```
-## Analyze network
+### Analyze network
 
 ```bash
 python main.py analyze --username target_user --graph --temporal
 ```
-## Download media & extract EXIF
+### Download media & extract EXIF
 
 ```bash
 python main.py media --username target_user --download --exif
 ```
-## Monitor changes
+### Monitor changes
 
 ```bash
 python main.py monitor --username target_user --check
 ```
-## Compare two accounts
+### Compare two accounts
 
 ```bash
 python main.py compare --username1 user1 --username2 user2 --mutual-followers
