@@ -50,5 +50,3 @@ This tool is for educational and ethical security research only. Comply with Ins
 
 ## License
 MIT License
-
---- END README ---
