@@ -50,5 +50,30 @@ Built-in exponential backoff, jittered delays, and session management to handle 
 ## Disclaimer
 This tool is for educational and ethical security research only. Comply with Instagram's Terms of Service and applicable laws. The author is not responsible for misuse.
 
+## Project Layout
+
+    ig-osint-engine/
+    ├── main.py              # CLI entry point
+    ├── requirements.txt     # dependencies
+    ├── install.sh           # one-command setup (Linux + Termux)
+    ├── modules/
+    │   ├── harvester.py     # collection + rate-limit defense
+    │   ├── analyzer.py      # graph + temporal pillars
+    │   ├── media_handler.py # CDN download + EXIF/geo
+    │   └── monitor.py       # change detection
+    ├── data/                # snapshots (local only, gitignored)
+    └── output/              # reports/graphs (local only, gitignored)
+
+## Known Limitations
+
+- Most Instagram endpoints require a logged-in session; unauthenticated use is heavily restricted.
+- Follower/following lists are aggressively rate-limited and may return partial data.
+- Instagram strips EXIF on upload, so GPS from EXIF is rare; post geotags are the primary geospatial source.
+- Instagram may change its API at any time; a failing command usually means an upstream change, not a bug.
+- Deleted vs archived posts cannot be distinguished externally, so removals are reported as "possibly deleted."
+- Timezone inference is a heuristic estimate, not proof of physical location.
+- Only research public accounts you are authorized to analyze, and respect rate limits and Instagram's Terms of Service.
+
+
 ## License
 MIT License
