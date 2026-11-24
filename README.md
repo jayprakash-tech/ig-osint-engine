@@ -8,6 +8,7 @@ Advanced modular Instagram OSINT intelligence engine for ethical security resear
 - **Temporal Profiler**: Activity heatmaps, timezone inference, behavioral patterns
 - **GeoOSINT**: EXIF extraction, GPS tracking, device fingerprinting
 - **Change Detection**: Monitor deleted posts, bio changes, follower spikes
+- **Indirect Recon (Pillar 5)**: bio entity extraction (emails/phones/crypto wallets), high-res avatar, cross-platform username enumeration, reverse image search links, tagged-post discovery — works on private profiles too
 
 ## Installation
 
@@ -43,7 +44,11 @@ python main.py monitor --username target_user --check
 ```bash
 python main.py compare --username1 user1 --username2 user2 --mutual-followers
 ```
+### Pillar 5 indirect recon (private-profile safe)
 
+```bash
+python main.py recon --username target_user --cookies cookies.json
+```
 ## Rate Limit Defense
 Built-in exponential backoff, jittered delays, and session management to handle Instagram's 429 blocks.
 
@@ -60,7 +65,8 @@ This tool is for educational and ethical security research only. Comply with Ins
     │   ├── harvester.py     # collection + rate-limit defense
     │   ├── analyzer.py      # graph + temporal pillars
     │   ├── media_handler.py # CDN download + EXIF/geo
-    │   └── monitor.py       # change detection
+    │   ├── monitor.py       # change detection
+    │   └── recon.py         # Pillar 5 indirect recon
     ├── data/                # snapshots (local only, gitignored)
     └── output/              # reports/graphs (local only, gitignored)
 
